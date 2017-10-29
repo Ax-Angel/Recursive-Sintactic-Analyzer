@@ -32,11 +32,11 @@ void E(char string[], int *index){
 }
 
 void EP(char string[], int *index){
-	printf("\n*******\n\n%c   en funcion EP\n\n*******\n",string[*index]);
+	
 	if( string[*index]=='+' || string[*index]=='-'){
 
 		(*index)++;
-		printf("\n\nSe incrementa index a: %d\n\n", *index);
+		
 		T(string, index);
 		EP(string, index);
 		return;
@@ -48,7 +48,7 @@ void EP(char string[], int *index){
 }
 
 void T(char string[], int *index){
-	printf("\n*******\n\n%c    en funcion T\n\n*******\n",string[*index]);
+
 	if ( string[*index]=='(' || string[*index]=='a' || 	string[*index]=='n' || 	string[*index]=='c' ){
 		F(string, index);
 		TP(string, index);
@@ -59,11 +59,11 @@ void T(char string[], int *index){
 }
 
 void TP(char string[], int *index){
-	printf("\n*******\n\n%c     en funcion TP\n\n*******\n",string[*index]);
+
 	if( string[*index]=='*' || string[*index]=='/'){
 
 		(*index)++;
-		printf("\n\nSe incrementa index a: %d\n\n", *index);
+		
 		F(string, index);
 		TP(string, index);
 		return;
@@ -75,23 +75,23 @@ void TP(char string[], int *index){
 }
 
 void F(char string[], int *index){
-	printf("\n*******\n\n%c     en funcion F\n\n*******\n",string[*index]);
+
 	if( string[*index]=='('){
 
 		(*index)++;
-		printf("\n\nSe incrementa index a: %d\n\n", *index);
+		
 		E(string, index);
 		if( string[*index]==')'){
 
 			(*index)++;
-			printf("\n\nSe incrementa index a: %d\n\n", *index);
+			
 		}else{
 			error(string, index);
 		}
 	}else if( string[*index]=='a' || string[*index]=='n' || string[*index]=='c'){
 
 		(*index)++;
-		printf("\n\nSe incrementa index a: %d\n\n", *index);
+		
 		return;
 	}else{
 		error(string, index);
